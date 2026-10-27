@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account Dashboard | Dinesh Express Kitchen - Fresh. Hot. Delivered.</title>
+  <meta name="description" content="Manage your Dinesh Express Kitchen account, track orders, reorder fresh burgers, manage delivery addresses, and redeem VIP coupons.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="accountDashboardContainer">
+
+  <!-- ==========================================================================
+       Top Navigation Header
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" id="headerLogoLink" title="Dinesh Express Kitchen">
+        <img src="images/logo.png" alt="Dinesh Express Kitchen Logo" class="site-brand-logo-img">
+        <div class="logo-text-group">
+          <div class="logo-title">Dinesh <span>Express Kitchen</span></div>
+          <div class="logo-tagline">Fresh. Hot. Delivered.</div>
+        </div>
+      </a>
+
+      <!-- Location Selector -->
+      <div class="location-selector" title="Selected delivery locality">
+        <i class="fa-solid fa-bolt" style="color: var(--flame-orange);"></i>
+        <span>Express Hub &bull; 25-Min Delivery</span>
+      </div>
+
+      <!-- Navigation links -->
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#popular-spots" class="nav-link">Top Restaurants</a>
+        <a href="index.html#patna-specials" class="nav-link">Patna Delicacies</a>
+        <a href="account.html" class="nav-link active">My Dashboard</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="header-actions">
+        <div class="user-menu-wrapper">
+          <div class="user-badge-btn" title="Your Account Menu">
+            <img 
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80" 
+              alt="Profile Avatar" 
+              class="user-badge-avatar"
+            >
+            <span class="user-badge-name">Rahul</span>
+            <i class="fa-solid fa-angle-down" style="font-size: 0.75rem; color: var(--ivory-subtle);"></i>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline btn-sm btn-trigger-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span class="desktop-only">Logout</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Account Main Container
+       ========================================================================== -->
+  <main class="account-page-wrapper">
+
+    <!-- Welcome Banner with Offer -->
+    <section class="welcome-banner" aria-label="Account Overview">
+      <div class="welcome-text-group">
+        <h1 id="welcomeGreeting">Welcome back, Rahul! 🍔</h1>
+        <p>VIP Member of <strong>Dinesh Express Kitchen</strong> &bull; Priority Express Delivery</p>
+      </div>
+
+      <div class="welcome-offer-pill">
+        <div class="offer-icon-flame">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="offer-pill-text">
+          <h4>25% OFF Express Treat</h4>
+          <p>Use code <strong>EXPRESS25</strong> for flat 25% discount</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard 2-Column Grid (Sidebar + Content Panes) -->
+    <div class="dashboard-grid">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="account-sidebar" aria-label="Sidebar Navigation">
+
+        <!-- User Summary Card -->
+        <div class="sidebar-profile-card">
+          <div class="profile-avatar-wrapper">
+            <img 
+              id="sidebarAvatar"
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80" 
+              alt="Profile photo" 
+              class="profile-avatar-img"
+            >
+            <button type="button" class="avatar-edit-badge" id="changeAvatarBtn" title="Change Avatar Photo">
+              <i class="fa-solid fa-camera"></i>
+            </button>
+          </div>
+
+          <h2 class="profile-name" id="sidebarName">Rahul Sharma</h2>
+          <div class="profile-badge-tag" id="sidebarTier">Patna Gold Foodie</div>
+
+          <div class="profile-contact-info">
+            <span><i class="fa-regular fa-envelope"></i> <span id="sidebarEmail">rahul.sharma@foodiepatna.in</span></span>
+            <span><i class="fa-solid fa-phone"></i> <span id="sidebarPhone">+91 98765 43210</span></span>
+          </div>
+        </div>
+
+        <!-- Navigation Tab Menu -->
+        <div class="sidebar-nav-card">
+          <nav class="sidebar-menu" role="tablist">
+            <button type="button" class="sidebar-tab-btn active" data-tab="profile" role="tab" aria-selected="true">
+              <div class="tab-btn-content">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+              </div>
+            </button>
+
+            <button type="button" class="sidebar-tab-btn" data-tab="orders" role="tab" aria-selected="false">
+              <div class="tab-btn-content">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>My Orders</span>
+              </div>
+              <span class="sidebar-badge" id="badgeOrdersCount">4</span>
+            </button>
+
+            <button type="button" class="sidebar-tab-btn" data-tab="favorites" role="tab" aria-selected="false">
+              <div class="tab-btn-content">
+                <i class="fa-regular fa-heart"></i>
+                <span>Favorite Spots</span>
+              </div>
+              <span class="sidebar-badge" id="badgeFavoritesCount">6</span>
+            </button>
+
+            <button type="button" class="sidebar-tab-btn" data-tab="addresses" role="tab" aria-selected="false">
+              <div class="tab-btn-content">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Saved Addresses</span>
+              </div>
+            </button>
+
+            <button type="button" class="sidebar-tab-btn" data-tab="offers" role="tab" aria-selected="false">
+              <div class="tab-btn-content">
+                <i class="fa-solid fa-tags"></i>
+                <span>Offers & Coupons</span>
+              </div>
+              <span class="sidebar-badge">4 Active</span>
+            </button>
+
+            <button type="button" class="sidebar-tab-btn" data-tab="notifications" role="tab" aria-selected="false">
+              <div class="tab-btn-content">
+                <i class="fa-regular fa-bell"></i>
+                <span>Notifications</span>
+              </div>
+              <span class="sidebar-badge" id="badgeNotifCount" style="background-color: var(--flame-orange); color: #fff;">2</span>
+            </button>
+
+            <button type="button" class="sidebar-tab-btn" data-tab="settings" role="tab" aria-selected="false">
+              <div class="tab-btn-content">
+                <i class="fa-solid fa-gear"></i>
+                <span>Account Settings</span>
+              </div>
+            </button>
+
+            <div class="sidebar-divider"></div>
+
+            <button type="button" class="sidebar-tab-btn btn-sidebar-logout btn-trigger-logout">
+              <div class="tab-btn-content">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Log Out</span>
+              </div>
+            </button>
+          </nav>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT CONTENT PANE -->
+      <section class="account-content-pane">
+
+        <!-- ==================================================================
+             SECTION 1: MY PROFILE
+             ================================================================== -->
+        <div class="tab-pane active" id="profile" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>My Profile & Personal Details</h2>
+              <p>Manage your account identity, food preferences, and default Patna address.</p>
+            </div>
+            <button type="submit" form="profileEditForm" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-floppy-disk"></i> Save Profile
+            </button>
+          </div>
+
+          <form id="profileEditForm">
+            <div class="form-grid-2">
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="profileFullName" class="form-label">Full Name</label>
+                <div class="input-wrapper">
+                  <input type="text" id="profileFullName" class="form-control" placeholder="Your full name" required>
+                  <i class="fa-regular fa-user input-icon"></i>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="profileEmail" class="form-label">Email Address</label>
+                <div class="input-wrapper">
+                  <input type="email" id="profileEmail" class="form-control" placeholder="Your email address" required>
+                  <i class="fa-regular fa-envelope input-icon"></i>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="profilePhone" class="form-label">Phone Number</label>
+                <div class="input-wrapper">
+                  <input type="tel" id="profilePhone" class="form-control" placeholder="10-digit mobile" required>
+                  <i class="fa-solid fa-phone input-icon"></i>
+                </div>
+              </div>
+
+              <!-- Date of Birth -->
+              <div class="form-group">
+                <label for="profileDob" class="form-label">Date of Birth</label>
+                <div class="input-wrapper">
+                  <input type="date" id="profileDob" class="form-control">
+                  <i class="fa-regular fa-calendar input-icon"></i>
+                </div>
+              </div>
+
+              <!-- Food Preference -->
+              <div class="form-group">
+                <label for="profileFoodPref" class="form-label">Food Preference</label>
+                <div class="input-wrapper">
+                  <select id="profileFoodPref" class="form-control" style="cursor: pointer;">
+                    <option value="Non-Veg">Non-Vegetarian (Biryani, Mutton & Kebabs)</option>
+                    <option value="Pure Veg">Pure Vegetarian (Bansi Vihar, Paneer & Thalis)</option>
+                    <option value="Eggetarian">Eggetarian</option>
+                    <option value="Jain Food">Jain Friendly</option>
+                  </select>
+                  <i class="fa-solid fa-leaf input-icon"></i>
+                </div>
+              </div>
+
+              <!-- Favorite Patna Hub -->
+              <div class="form-group">
+                <label for="profileHub" class="form-label">Favorite Patna Food Hub</label>
+                <div class="input-wrapper">
+                  <select id="profileHub" class="form-control" style="cursor: pointer;">
+                    <option value="Boring Road">Boring Road & Boring Canal Road</option>
+                    <option value="Bailey Road">Bailey Road & Saguna More</option>
+                    <option value="Kankarbagh">Kankarbagh (Ahuna Meat & Cafes)</option>
+                    <option value="Fraser Road">Fraser Road & Gandhi Maidan</option>
+                    <option value="Patliputra Colony">Patliputra Colony & Industrial Area</option>
+                    <option value="Maurya Lok">Maurya Lok Complex (Street Food)</option>
+                  </select>
+                  <i class="fa-solid fa-city input-icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Delivery Address -->
+            <div class="form-group" style="margin-top: 1rem;">
+              <label for="profileAddress" class="form-label">Primary Delivery Address in Patna</label>
+              <div class="input-wrapper">
+                <textarea 
+                  id="profileAddress" 
+                  class="form-control" 
+                  rows="3" 
+                  style="padding-left: 2.85rem; resize: vertical;"
+                  placeholder="Flat number, building name, street, Patna landmark"
+                ></textarea>
+                <i class="fa-solid fa-location-dot input-icon" style="top: 1.1rem;"></i>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+              <button type="reset" class="btn btn-outline btn-sm">Reset</button>
+              <button type="submit" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-check"></i> Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 2: MY ORDERS
+             ================================================================== -->
+        <div class="tab-pane" id="orders" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>My Order History</h2>
+              <p>Reorder your favorite dishes from Patna's top rated eateries with 1 click.</p>
+            </div>
+            <a href="index.html" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-plus"></i> Order New Dish
+            </a>
+          </div>
+
+          <div class="orders-list" id="ordersContainer">
+            <!-- Rendered dynamically by script.js -->
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 3: FAVORITES
+             ================================================================== -->
+        <div class="tab-pane" id="favorites" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>My Favorite Spots in Patna</h2>
+              <p>Curated list of your go-to cafes, rooftop lounges, and heritage food joints.</p>
+            </div>
+          </div>
+
+          <div class="favorites-grid" id="favoritesContainer">
+            <!-- Rendered dynamically by script.js -->
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 4: SAVED ADDRESSES
+             ================================================================== -->
+        <div class="tab-pane" id="addresses" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>Saved Delivery Addresses</h2>
+              <p>Manage your home, workplace, and friend addresses across Patna for fast checkout.</p>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" id="openAddAddressBtn">
+              <i class="fa-solid fa-location-crosshairs"></i> Add New Address
+            </button>
+          </div>
+
+          <div class="addresses-grid" id="addressesContainer">
+            <!-- Rendered dynamically by script.js -->
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 5: OFFERS & COUPONS
+             ================================================================== -->
+        <div class="tab-pane" id="offers" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>Offers & Foodie Coupons</h2>
+              <p>Exclusive deals and discounts tailored for Patna Foodie Club members.</p>
+            </div>
+          </div>
+
+          <div class="offers-grid">
+            <!-- Coupon 1 -->
+            <div class="coupon-card">
+              <div class="coupon-discount-val">50% OFF</div>
+              <div class="coupon-title">Welcome Patna Foodie Feast</div>
+              <div class="coupon-desc">Get 50% discount up to ₹150 on your next order from any verified restaurant.</div>
+              <div class="coupon-code-box">
+                <span class="coupon-code-text">PATNAFIRST</span>
+                <button type="button" class="btn btn-primary btn-sm btn-copy-code" data-code="PATNAFIRST">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+            </div>
+
+            <!-- Coupon 2 -->
+            <div class="coupon-card">
+              <div class="coupon-discount-val">FLAT ₹100</div>
+              <div class="coupon-title">Boring Road & Bailey Road Cafes</div>
+              <div class="coupon-desc">Flat ₹100 instant discount on orders above ₹499 across all partnered cafes.</div>
+              <div class="coupon-code-box">
+                <span class="coupon-code-text">PATNAFOODIE</span>
+                <button type="button" class="btn btn-primary btn-sm btn-copy-code" data-code="PATNAFOODIE">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+            </div>
+
+            <!-- Coupon 3 -->
+            <div class="coupon-card">
+              <div class="coupon-discount-val">FLAT ₹75</div>
+              <div class="coupon-title">Authentic Handi Meat & Biryani</div>
+              <div class="coupon-desc">Applicable on Old Champaran Meat House and Biryani Mahal orders above ₹400.</div>
+              <div class="coupon-code-box">
+                <span class="coupon-code-text">LITTIPARTY</span>
+                <button type="button" class="btn btn-primary btn-sm btn-copy-code" data-code="LITTIPARTY">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+            </div>
+
+            <!-- Coupon 4 -->
+            <div class="coupon-card">
+              <div class="coupon-discount-val">FREE DEL</div>
+              <div class="coupon-title">Free Express Delivery in Patna</div>
+              <div class="coupon-desc">Enjoy zero delivery fee on all orders above ₹199 throughout Patna city.</div>
+              <div class="coupon-code-box">
+                <span class="coupon-code-text">FREEDELPATNA</span>
+                <button type="button" class="btn btn-primary btn-sm btn-copy-code" data-code="FREEDELPATNA">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 6: NOTIFICATIONS
+             ================================================================== -->
+        <div class="tab-pane" id="notifications" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>Notifications & Updates</h2>
+              <p>Real-time delivery status, festival treats, and foodie rewards.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" id="btnMarkAllRead">
+              <i class="fa-solid fa-check-double"></i> Mark All as Read
+            </button>
+          </div>
+
+          <div class="notifications-list" id="notificationsContainer">
+            <!-- Rendered dynamically by script.js -->
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 7: SETTINGS
+             ================================================================== -->
+        <div class="tab-pane" id="settings" role="tabpanel">
+          <div class="pane-header">
+            <div class="pane-title-group">
+              <h2>Account Settings & Privacy</h2>
+              <p>Configure notification channels, change login credentials, and account security.</p>
+            </div>
+          </div>
+
+          <!-- Notification Preferences -->
+          <div class="settings-group">
+            <h3>Notification Preferences</h3>
+            <p>Choose how you'd like to receive order alerts and special offers.</p>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>WhatsApp Order Updates</h4>
+                <p>Receive live delivery rider tracking and ETA via WhatsApp.</p>
+              </div>
+              <label class="switch" aria-label="Toggle WhatsApp updates">
+                <input type="checkbox" checked onchange="showToast('WhatsApp preferences updated!', 'success')">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>Promotional Offers & Weekend Deals</h4>
+                <p>Get notified about new restaurant menus and discount coupons.</p>
+              </div>
+              <label class="switch" aria-label="Toggle promotional updates">
+                <input type="checkbox" checked onchange="showToast('Promotion preferences updated!', 'success')">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Change Password Form -->
+          <div class="settings-group">
+            <h3>Change Password</h3>
+            <p>Update your password to keep your FoodiePatna account secure.</p>
+
+            <form id="changePasswordForm" style="max-width: 520px;">
+              <div class="form-group">
+                <label for="currentPwd" class="form-label">Current Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="currentPwd" class="form-control" placeholder="Enter current password" required>
+                  <i class="fa-solid fa-key input-icon"></i>
+                  <button type="button" class="password-toggle-btn" data-target="currentPwd" aria-label="Toggle password visibility">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="newPwd" class="form-label">New Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="newPwd" class="form-control" placeholder="At least 6 characters" required>
+                  <i class="fa-solid fa-lock input-icon"></i>
+                  <button type="button" class="password-toggle-btn" data-target="newPwd" aria-label="Toggle password visibility">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirmNewPwd" class="form-label">Confirm New Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="confirmNewPwd" class="form-control" placeholder="Re-type new password" required>
+                  <i class="fa-solid fa-shield-halved input-icon"></i>
+                  <button type="button" class="password-toggle-btn" data-target="confirmNewPwd" aria-label="Toggle password visibility">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-lock"></i> Update Password
+              </button>
+            </form>
+          </div>
+
+          <!-- Danger Zone: Delete Account -->
+          <div class="danger-zone-box">
+            <div class="danger-text">
+              <h4>Delete Account Permanently</h4>
+              <p>Permanently remove your FoodiePatna account, past order records, and saved addresses.</p>
+            </div>
+            <button type="button" class="btn btn-danger btn-sm" id="btnDeleteAccount">
+              <i class="fa-solid fa-trash-can"></i> Delete Account
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL: ADD NEW ADDRESS
+       ========================================================================== -->
+  <div class="modal-overlay" id="addAddressModal" role="dialog" aria-modal="true" aria-labelledby="addressModalTitle">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn" id="closeAddressModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <h3 id="addressModalTitle">Add Delivery Address</h3>
+        <p>Save a new delivery address in Patna for faster orders.</p>
+      </div>
+
+      <form id="addAddressForm">
+        <div class="form-group">
+          <label for="addrType" class="form-label">Address Tag</label>
+          <div class="input-wrapper">
+            <select id="addrType" class="form-control" style="cursor: pointer;">
+              <option value="Home">Home</option>
+              <option value="Work">Work / Office</option>
+              <option value="Other">Other / Friend's Place</option>
+            </select>
+            <i class="fa-solid fa-tag input-icon"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addrTitle" class="form-label">Address Name / Building</label>
+          <div class="input-wrapper">
+            <input type="text" id="addrTitle" class="form-control" placeholder="e.g. Maurya Lok Office, Anand Vihar" required>
+            <i class="fa-solid fa-building input-icon"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addrDetails" class="form-label">Complete Street & Landmark</label>
+          <div class="input-wrapper">
+            <textarea id="addrDetails" class="form-control" rows="3" style="padding-left: 2.85rem;" placeholder="Flat/House no, Street name, Near Landmark" required></textarea>
+            <i class="fa-solid fa-map-pin input-icon" style="top: 1.1rem;"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addrPincode" class="form-label">Patna Pincode</label>
+          <div class="input-wrapper">
+            <input type="text" id="addrPincode" class="form-control" placeholder="e.g. 800001" maxlength="6" value="800001" required>
+            <i class="fa-solid fa-envelopes-bulk input-icon"></i>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('addAddressModal').classList.remove('active')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Address</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: CONFIRM LOGOUT
+       ========================================================================== -->
+  <div class="modal-overlay" id="logoutModal" role="dialog" aria-modal="true" aria-labelledby="logoutModalTitle">
+    <div class="modal-box" style="max-width: 420px; text-align: center;">
+      <div style="width: 56px; height: 56px; background: rgba(255, 107, 26, 0.15); color: var(--flame-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.25rem;">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      </div>
+      <h3 id="logoutModalTitle">Log Out of Dinesh Express Kitchen?</h3>
+      <p style="color: var(--ivory-subtle); margin-top: 0.5rem; font-size: 0.9rem;">
+        Are you sure you want to log out? You will need to sign in again to access your orders, favorites, and express discounts.
+      </p>
+
+      <div class="modal-actions" style="justify-content: center; margin-top: 1.75rem;">
+        <button type="button" class="btn btn-outline" id="cancelLogoutBtn">Stay Logged In</button>
+        <button type="button" class="btn btn-primary" id="confirmLogoutBtn">Yes, Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: CONFIRM DELETE ACCOUNT
+       ========================================================================== -->
+  <div class="modal-overlay" id="deleteAccountModal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+    <div class="modal-box" style="max-width: 440px;">
+      <button type="button" class="modal-close-btn" id="closeDeleteModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div style="width: 50px; height: 50px; background: rgba(239, 68, 68, 0.15); color: var(--danger-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem;">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3 id="deleteModalTitle" style="color: #F87171;">Delete Your Account?</h3>
+        <p>This action is irreversible. All your past orders, favorite dishes, and express coupons will be permanently removed.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="deleteConfirmInput" class="form-label">Type <strong>DELETE</strong> to confirm:</label>
+        <div class="input-wrapper">
+          <input type="text" id="deleteConfirmInput" class="form-control" placeholder="DELETE">
+          <i class="fa-solid fa-trash input-icon"></i>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" id="cancelDeleteBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete Account</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinesh Express Kitchen - Fresh. Hot. Delivered. | Gourmet Burgers & Quick Bites</title>
+  <meta name="description" content="Welcome to Dinesh Express Kitchen! Fresh, hot, and speedy delivery of gourmet burgers, loaded fries, artisanal pizzas, and chef special meals.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Site Header & Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" id="headerLogoLink" title="Dinesh Express Kitchen">
+        <img src="images/logo.png" alt="Dinesh Express Kitchen Logo" class="site-brand-logo-img">
+        <div class="logo-text-group">
+          <div class="logo-title">Dinesh <span>Express Kitchen</span></div>
+          <div class="logo-tagline">Fresh. Hot. Delivered.</div>
+        </div>
+      </a>
+
+      <!-- Location Selector -->
+      <div class="location-selector" title="Express Delivery Zone">
+        <i class="fa-solid fa-bolt" style="color: var(--flame-orange);"></i>
+        <span>Express Hub &bull; 25-Min Delivery</span>
+      </div>
+
+      <!-- Header Navigation Links -->
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="#popular-spots" class="nav-link">Top Restaurants</a>
+        <a href="#patna-specials" class="nav-link">Patna Specials</a>
+        <a href="account.html" class="nav-link">My Account</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+        </a>
+        <a href="account.html" class="btn btn-primary btn-sm">
+          <i class="fa-regular fa-user"></i> My Dashboard
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section with Patna Discovery & 5-Second Background Slider
+       ========================================================================== -->
+  <section class="hero-section" id="heroSection">
+    <!-- Background Slider (slides every 5 seconds) -->
+    <div class="hero-bg-slider" id="heroBgSlider" aria-hidden="true">
+      <div class="hero-slide active" style="background-image: url('images/slide-1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/slide-2.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/slide-3.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/slide-4.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/slide-5.jpg');"></div>
+      <div class="hero-slider-overlay"></div>
+    </div>
+
+    <!-- Slide Indicators & Controls -->
+    <div class="hero-slider-nav">
+      <button type="button" class="hero-slide-arrow prev" id="heroPrevBtn" aria-label="Previous slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="hero-slide-dots" id="heroSlideDots">
+        <span class="slide-dot active" data-slide="0" title="Slide 1 - Crispy Snacks"></span>
+        <span class="slide-dot" data-slide="1" title="Slide 2 - Dining & Artisan Pizzas"></span>
+        <span class="slide-dot" data-slide="2" title="Slide 3 - South Indian Feast"></span>
+        <span class="slide-dot" data-slide="3" title="Slide 4 - Cafe Fries & Dips"></span>
+        <span class="slide-dot" data-slide="4" title="Slide 5 - Gourmet Oven Pizza"></span>
+      </div>
+      <button type="button" class="hero-slide-arrow next" id="heroNextBtn" aria-label="Next slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-pill-tag">
+        <i class="fa-solid fa-truck-fast"></i> Dinesh Express Kitchen &bull; Fresh. Hot. Delivered.
+      </div>
+      <h1 class="hero-title">
+        Gourmet Burgers, Pizzas & Meals, <span>Delivered Fresh & Hot.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Indulge in flame-grilled burgers, loaded fries, authentic Biryanis, and chef-curated fast meals delivered straight from our kitchen to your doorstep.
+      </p>
+
+      <!-- Search Box -->
+      <div class="hero-search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input 
+          type="text" 
+          class="hero-search-input" 
+          placeholder="Search for Burgers, Loaded Fries, Wood-Fired Pizza, Biryani, or Combos..."
+          id="homeSearchInput"
+        >
+        <button class="btn btn-primary" onclick="showToast('Searching Dinesh Express Kitchen menu...', 'info')">
+          Search
+        </button>
+      </div>
+
+      <!-- Popular Localities in Patna -->
+      <div class="patna-hubs-row">
+        <span style="font-size: 0.85rem; color: #FFFFFF; font-weight: 600; margin-right: 0.3rem;">Express Categories:</span>
+        <a href="#popular-spots" class="hub-chip">Gourmet Burgers</a>
+        <a href="#popular-spots" class="hub-chip">Crispy Bites</a>
+        <a href="#popular-spots" class="hub-chip">Artisan Pizza</a>
+        <a href="#popular-spots" class="hub-chip">Dum Biryani</a>
+        <a href="#popular-spots" class="hub-chip">Loaded Shakes</a>
+        <a href="#popular-spots" class="hub-chip">Express Combos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Top Recommended Eateries in Patna
+       ========================================================================== -->
+  <section class="section-wrapper" id="popular-spots">
+    <div class="section-head">
+      <div>
+        <h2>Trending Food Spots in Patna</h2>
+        <p>Curated and verified spots loved by local food enthusiasts</p>
+      </div>
+      <a href="login.html" class="btn btn-outline btn-sm">
+        Join Patna Foodie Club <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="favorites-grid">
+      <!-- Spot 1 -->
+      <div class="favorite-card">
+        <div class="favorite-img-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" 
+            alt="Biryani Mahal Dum Biryani" 
+            class="favorite-img"
+          >
+          <div class="favorite-rating-chip">
+            <i class="fa-solid fa-star"></i> 4.8 (2.4k+)
+          </div>
+        </div>
+        <div class="favorite-info">
+          <h3>Biryani Mahal</h3>
+          <p class="favorite-cuisine">Kolkata Dum Biryani, Mutton Chaap, Phirni</p>
+          <div class="favorite-loc-row">
+            <span><i class="fa-solid fa-location-dot"></i> Station Road &bull; 2.4 km</span>
+            <span>₹550 for two</span>
+          </div>
+          <a href="login.html" class="btn btn-primary btn-block btn-sm">
+            <i class="fa-solid fa-utensils"></i> Order or Book Table
+          </a>
+        </div>
+      </div>
+
+      <!-- Spot 2 -->
+      <div class="favorite-card">
+        <div class="favorite-img-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" 
+            alt="The Forest Cafe" 
+            class="favorite-img"
+          >
+          <div class="favorite-rating-chip">
+            <i class="fa-solid fa-star"></i> 4.9 (1.8k+)
+          </div>
+        </div>
+        <div class="favorite-info">
+          <h3>The Forest Cafe</h3>
+          <p class="favorite-cuisine">Artisanal Coffee, Wood-fired Pizza, Shakes</p>
+          <div class="favorite-loc-row">
+            <span><i class="fa-solid fa-location-dot"></i> Patliputra Colony &bull; 1.2 km</span>
+            <span>₹750 for two</span>
+          </div>
+          <a href="login.html" class="btn btn-primary btn-block btn-sm">
+            <i class="fa-solid fa-utensils"></i> Order or Book Table
+          </a>
+        </div>
+      </div>
+
+      <!-- Spot 3 -->
+      <div class="favorite-card">
+        <div class="favorite-img-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=600&q=80" 
+            alt="Bansi Vihar South Indian" 
+            class="favorite-img"
+          >
+          <div class="favorite-rating-chip">
+            <i class="fa-solid fa-star"></i> 4.7 (3.1k+)
+          </div>
+        </div>
+        <div class="favorite-info">
+          <h3>Bansi Vihar</h3>
+          <p class="favorite-cuisine">Pure Veg, Butter Masala Dosa, Filter Coffee</p>
+          <div class="favorite-loc-row">
+            <span><i class="fa-solid fa-location-dot"></i> Fraser Road &bull; 1.9 km</span>
+            <span>₹400 for two</span>
+          </div>
+          <a href="login.html" class="btn btn-primary btn-block btn-sm">
+            <i class="fa-solid fa-utensils"></i> Order or Book Table
+          </a>
+        </div>
+      </div>
+
+      <!-- Spot 4 -->
+      <div class="favorite-card">
+        <div class="favorite-img-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
+            alt="Old Champaran Meat House" 
+            class="favorite-img"
+          >
+          <div class="favorite-rating-chip">
+            <i class="fa-solid fa-star"></i> 4.8 (4.2k+)
+          </div>
+        </div>
+        <div class="favorite-info">
+          <h3>Old Champaran Meat House</h3>
+          <p class="favorite-cuisine">Clay Pot Ahuna Handi Mutton, Tandoori Roti</p>
+          <div class="favorite-loc-row">
+            <span><i class="fa-solid fa-location-dot"></i> Kankarbagh &bull; 3.5 km</span>
+            <span>₹650 for two</span>
+          </div>
+          <a href="login.html" class="btn btn-primary btn-block btn-sm">
+            <i class="fa-solid fa-utensils"></i> Order or Book Table
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Special Callout Banner
+       ========================================================================== -->
+  <section class="section-wrapper" id="patna-specials">
+    <div class="welcome-banner" style="background: linear-gradient(135deg, #182635 0%, #101820 100%);">
+      <div class="welcome-text-group">
+        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Join FoodiePatna Gold Today! 🎁</h2>
+        <p>Unlock flat 25% discount across all partnered cafes in Boring Road & Bailey Road.</p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="login.html?action=register" class="btn btn-primary">
+            <i class="fa-solid fa-sparkles"></i> Create Free Account
+          </a>
+          <a href="account.html" class="btn btn-outline">
+            <i class="fa-solid fa-user"></i> View My Dashboard
+          </a>
+        </div>
+      </div>
+
+      <div class="welcome-offer-pill" style="max-width: 340px;">
+        <div class="offer-icon-flame">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <div class="offer-pill-text">
+          <h4>Promo Code: PATNAFIRST</h4>
+          <p>Get up to ₹150 OFF on your first dining order</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo" title="Dinesh Express Kitchen">
+          <img src="images/logo.png" alt="Dinesh Express Kitchen Logo" class="site-brand-logo-img">
+          <div class="logo-text-group">
+            <div class="logo-title">Dinesh <span>Express Kitchen</span></div>
+            <div class="logo-tagline">Fresh. Hot. Delivered.</div>
+          </div>
+        </a>
+        <p>
+          Dinesh Express Kitchen delivers sizzling hot burgers, artisanal pizzas, crispy snacks, and delicious meals right to your door with unmatched express speed.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Popular Cuisines</h4>
+        <ul>
+          <li><a href="#popular-spots">Signature Burgers</a></li>
+          <li><a href="#popular-spots">Wood-Fired Pizza</a></li>
+          <li><a href="#popular-spots">Crispy Loaded Fries</a></li>
+          <li><a href="#popular-spots">Special Dum Biryani</a></li>
+          <li><a href="#popular-spots">Chef Combos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>User Account</h4>
+        <ul>
+          <li><a href="login.html">Sign In / Register</a></li>
+          <li><a href="account.html#profile">My Profile</a></li>
+          <li><a href="account.html#orders">Past Orders</a></li>
+          <li><a href="account.html#favorites">Favorite Spots</a></li>
+          <li><a href="account.html#offers">Active Coupons</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Express Promise</h4>
+        <ul>
+          <li><a href="javascript:void(0)">30-Min Fast Delivery</a></li>
+          <li><a href="javascript:void(0)">100% Fresh Ingredients</a></li>
+          <li><a href="javascript:void(0)">Hygiene Certified</a></li>
+          <li><a href="javascript:void(0)">Hot & Crisp Packaging</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Dinesh Express Kitchen. All rights reserved. Fresh. Hot. Delivered.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="javascript:void(0)" onclick="showToast('Dinesh Express Kitchen Privacy Policy', 'info')">Privacy Policy</a>
+        <a href="javascript:void(0)" onclick="showToast('Dinesh Express Kitchen Terms & Conditions', 'info')">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
