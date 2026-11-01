@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Compare Industrial Equipment – MechMart{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+    <div>
+      <h1 class="h2 fw-bold mb-1"><i class="fa-solid fa-code-compare text-warning me-2"></i> Product Comparison Matrix</h1>
+      <p class="text-muted small mb-0">Evaluate up to 4 mechanical products side by side to verify sizing and specs.</p>
+    </div>
+    <a href="{% url 'catalog:product_list' %}" class="btn btn-outline-dark btn-sm">
+      <i class="fa-solid fa-plus me-1"></i> Add More Products
+    </a>
+  </div>
+
+  {% if products %}
+  <div class="compare-container">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          {% for product in products %}
+          <th>
+            <div class="d-flex justify-content-end mb-2">
+              <button type="button" class="btn btn-sm btn-outline-danger btn-compare-toggle py-0 px-2" data-product-id="{{ product.id }}" title="Remove">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div class="mb-2" style="height: 120px;">
+              <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid rounded" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h6 class="fw-bold mb-1">{{ product.name }}</h6>
+            <span class="badge bg-secondary mb-2">{{ product.sku }}</span>
+            <div class="fs-5 fw-bold text-dark">₹{{ product.discounted_price|floatformat:2 }}</div>
+            <div class="mt-2">
+              <button type="button" class="btn btn-orange btn-sm w-100 btn-add-to-cart" data-product-id="{{ product.id }}">
+                <i class="fa-solid fa-cart-plus me-1"></i> Add to Cart
+              </button>
+            </div>
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Brand / Manufacturer</td>
+          {% for product in products %}
+          <td class="fw-semibold">{{ product.brand }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Category</td>
+          {% for product in products %}
+          <td>{{ product.category.name }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Stock Availability</td>
+          {% for product in products %}
+          <td>
+            {% if product.is_in_stock %}
+            <span class="text-success fw-bold"><i class="fa-solid fa-check me-1"></i> In Stock ({{ product.stock }})</span>
+            {% else %}
+            <span class="text-danger fw-bold"><i class="fa-solid fa-xmark me-1"></i> Out of Stock</span>
+            {% endif %}
+          </td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Customer Rating</td>
+          {% for product in products %}
+          <td><i class="fa-solid fa-star text-warning me-1"></i> {{ product.rating }} / 5.0 ({{ product.review_count }} reviews)</td>
+          {% endfor %}
+        </tr>
+
+        <!-- Dynamic Specs Rows -->
+        {% for spec_key in spec_keys %}
+        <tr>
+          <td>{{ spec_key }}</td>
+          {% for product in products %}
+          <td>
+            {{ product.specifications|default_if_none:""|dictsort:spec_key|default:"—" }}
+            {# Alternative direct dict lookup: #}
+            {% for k, v in product.specifications.items %}
+              {% if k == spec_key %}{{ v }}{% endif %}
+            {% endfor %}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="p-5 text-center bg-white rounded-4 border">
+    <i class="fa-solid fa-code-compare fs-1 text-secondary mb-3"></i>
+    <h4 class="fw-bold">No Products Selected for Comparison</h4>
+    <p class="text-muted max-w-500 mx-auto">
+      You can select up to 4 mechanical products from the catalog using the comparison button on any product card.
+    </p>
+    <a href="{% url 'catalog:product_list' %}" class="btn btn-orange mt-2">
+      Explore Products Catalog
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
