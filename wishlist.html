@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Saved Wishlist – MechMart{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+    <div>
+      <h1 class="h2 fw-bold mb-1"><i class="fa-solid fa-heart text-danger me-2"></i> My Wishlist</h1>
+      <p class="text-muted small mb-0">Saved industrial parts and equipment for later procurement.</p>
+    </div>
+    <a href="{% url 'catalog:product_list' %}" class="btn btn-outline-dark btn-sm">
+      Continue Browsing
+    </a>
+  </div>
+
+  {% if products %}
+  <div class="row g-4">
+    {% for product in products %}
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+      <div class="product-card-mech">
+        <div class="product-badge-group">
+          {% if product.discount_percent > 0 %}
+          <span class="badge-discount">-{{ product.discount_percent }}% OFF</span>
+          {% endif %}
+        </div>
+
+        <div class="product-quick-actions">
+          <button type="button" class="btn-card-action btn-wishlist-toggle active" data-product-id="{{ product.id }}" title="Remove from Wishlist">
+            <i class="fa-solid fa-heart text-danger"></i>
+          </button>
+        </div>
+
+        <a href="{% url 'catalog:product_detail' slug=product.slug %}" class="product-img-box text-decoration-none">
+          <img src="{{ product.image_url }}" alt="{{ product.name }}" loading="lazy">
+        </a>
+
+        <div class="product-info-box">
+          <div class="product-meta-row">
+            <span class="product-brand-tag">{{ product.brand }}</span>
+            <span class="product-sku-tag">{{ product.sku }}</span>
+          </div>
+          <a href="{% url 'catalog:product_detail' slug=product.slug %}" class="product-name-title text-decoration-none">
+            {{ product.name }}
+          </a>
+          <div class="product-price-box">
+            <span class="price-current">₹{{ product.discounted_price|floatformat:2 }}</span>
+          </div>
+        </div>
+
+        <div class="product-card-footer">
+          <button type="button" class="btn-card-add-cart btn-add-to-cart" data-product-id="{{ product.id }}">
+            <i class="fa-solid fa-cart-plus"></i> Move to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="p-5 text-center bg-white rounded-4 border">
+    <i class="fa-regular fa-heart fs-1 text-secondary mb-3"></i>
+    <h4 class="fw-bold">Your Wishlist is Empty</h4>
+    <p class="text-muted max-w-500 mx-auto">
+      You haven't saved any mechanical tools or components yet. Browse our categories and click the heart icon to save products.
+    </p>
+    <a href="{% url 'catalog:product_list' %}" class="btn btn-orange mt-2">
+      Explore Products
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
