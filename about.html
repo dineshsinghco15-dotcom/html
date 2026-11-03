@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about The Golden Library - our institutional mission, operating hours, floor plan, circulation rules, and academic team.">
+  <title>About Us | The Golden Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Library Information Bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <span class="top-bar-item">
+          <strong>Library Hours:</strong> Mon - Sat: 8:00 AM - 9:00 PM | Sun: 10:00 AM - 5:00 PM
+        </span>
+        <span class="top-bar-item">
+          <strong>Helpdesk:</strong> +91 (011) 2766-7000
+        </span>
+      </div>
+      <div class="top-bar-links">
+        <a href="books.html">Catalogue</a>
+        <a href="about.html">Timings</a>
+        <a href="login.html">Student Login</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Premium Navigation Bar -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="The Golden Library Home">
+        <img src="images/library-logo.svg" alt="The Golden Library Emblem" class="brand-logo" width="280" height="60">
+      </a>
+
+      <!-- Pure CSS Mobile Toggle (Zero JavaScript) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle Navigation">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Primary Navigation Links -->
+      <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="books.html" class="nav-link">Browse Books</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="book-details.html" class="nav-link">Book Details</a></li>
+          <li><a href="about.html" class="nav-link active">About Library</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Member Login</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Join Library</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb Trail">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">&rsaquo;</span>
+          <span class="breadcrumb-current">About The Golden Library</span>
+        </nav>
+
+        <!-- About Hero Section -->
+        <div class="about-hero-grid">
+          <div>
+            <span class="section-tag">Established 1984</span>
+            <h1 class="section-title">A Legacy of <span>Scholarly Excellence</span></h1>
+            <p class="section-desc mb-2">The Golden Library stands as the academic crown of the university. Founded to nurture intellectual curiosity, rigorous investigation, and lifelong learning, our facility bridges classical wisdom with digital research frontiers.</p>
+            <p class="section-desc mb-4">Housed in an expansive four-storey neoclassical building, the library houses over 52,000 print volumes, rare manuscripts, and institutional digital repository terminals.</p>
+
+            <div class="book-meta-chips">
+              <span class="book-meta-chip">&#127979; 35,000 Sq. Ft. Facility</span>
+              <span class="book-meta-chip">&#128218; 52,000+ Print Volumes</span>
+              <span class="book-meta-chip">&#128187; 150 Digital Terminals</span>
+              <span class="book-meta-chip">&#128338; 450 Seating Capacity</span>
+            </div>
+          </div>
+
+          <div>
+            <img src="images/about-library.svg" alt="The Golden Library Building" class="w-full" width="540" height="380">
+          </div>
+        </div>
+
+        <!-- Mission & Objectives Grid -->
+        <div class="section-header">
+          <span class="section-tag">Purpose</span>
+          <h2 class="section-title">Our Mission &amp; Objectives</h2>
+          <p class="section-desc">Guiding principles that steer our collection development and student services.</p>
+        </div>
+
+        <div class="info-cards-grid mb-6">
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">&#127919;</div>
+            <h3>Democratizing Knowledge</h3>
+            <p>Ensure equitable, unhindered access to foundational texts, peer-reviewed journals, and syllabus materials for every enrolled scholar regardless of financial background.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">&#128187;</div>
+            <h3>Digital Transformation</h3>
+            <p>Integrate cutting-edge RFID self-circulation, open-access research repositories, and seamless remote digital consortium access to global databases like IEEE and ACM.</p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">&#128218;</div>
+            <h3>Preserving Heritage</h3>
+            <p>Safeguard historical archives, national freedom movement documentation, and rare technical manuscripts in climate-controlled preservation stacks.</p>
+          </article>
+        </div>
+
+        <!-- Operating Hours Table -->
+        <div class="section-header">
+          <span class="section-tag">Hours</span>
+          <h2 class="section-title">Service &amp; Circulation Schedule</h2>
+          <p class="section-desc">Open all 7 days during university semester examinations with extended evening study access.</p>
+        </div>
+
+        <div class="form-card mb-6">
+          <table class="book-spec-table">
+            <thead>
+              <tr>
+                <th scope="col">Library Section</th>
+                <th scope="col">Monday &ndash; Friday</th>
+                <th scope="col">Saturday</th>
+                <th scope="col">Sunday &amp; Holidays</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Circulation &amp; Borrowing Desk</th>
+                <td>8:30 AM &ndash; 6:00 PM</td>
+                <td>9:00 AM &ndash; 4:00 PM</td>
+                <td>Closed (Drop Box Open)</td>
+              </tr>
+              <tr>
+                <th scope="row">Reading &amp; Stack Halls</th>
+                <td>8:00 AM &ndash; 9:00 PM</td>
+                <td>8:00 AM &ndash; 8:00 PM</td>
+                <td>10:00 AM &ndash; 5:00 PM</td>
+              </tr>
+              <tr>
+                <th scope="row">Digital Resource Lab &amp; OPAC</th>
+                <td>8:00 AM &ndash; 8:00 PM</td>
+                <td>9:00 AM &ndash; 6:00 PM</td>
+                <td>10:00 AM &ndash; 4:00 PM</td>
+              </tr>
+              <tr>
+                <th scope="row">Examination Extended Hours</th>
+                <td>8:00 AM &ndash; 11:00 PM</td>
+                <td>8:00 AM &ndash; 11:00 PM</td>
+                <td>9:00 AM &ndash; 9:00 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="section-header">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Common questions regarding student borrowing privileges, book renewals, and repository access.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">How do I register for a library borrowing card?</summary>
+            <div class="faq-answer">
+              <p>Undergraduate and postgraduate students are issued an active library barcode during university orientation. You can also register your account online through our <a href="register.html">Membership Registration Portal</a> using your college admission roll number.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I renew borrowed books online?</summary>
+            <div class="faq-answer">
+              <p>Yes. Students may log in to their student portal before the due date and submit a renewal request, provided no other student has placed a hold on that volume.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What are the overdue fine policies?</summary>
+            <div class="faq-answer">
+              <p>To promote fair circulation, an overdue fee of <strong>Rs. 2.00 per day per book</strong> is charged after the 14-day borrowing duration. A 2-day grace period is provided at the end of each semester.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How does the Book Bank scheme work?</summary>
+            <div class="faq-answer">
+              <p>The Book Bank provides full-semester textbook sets to qualifying meritorious and reservation-category scholars. Applications open on the ground floor circulation counter during the first two weeks of each semester.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>THE GOLDEN <span>LIBRARY</span></h3>
+        <p>A premier university resource centre fostering intellectual curiosity and academic excellence since 1984. Equipped with cutting-edge digital archives and serene study halls.</p>
+        <span class="footer-badge">BTech CSE Minor Project</span>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Portal</a></li>
+          <li><a href="books.html">Book Catalogue</a></li>
+          <li><a href="categories.html">Academic Pillars</a></li>
+          <li><a href="about.html">Library Mission</a></li>
+          <li><a href="contact.html">Helpdesk &amp; Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Disciplines</h4>
+        <ul class="footer-links">
+          <li><a href="categories.html#programming">Programming &amp; IT</a></li>
+          <li><a href="categories.html#science">Natural &amp; Applied Science</a></li>
+          <li><a href="categories.html#literature">Literature &amp; Classics</a></li>
+          <li><a href="categories.html#history">World &amp; Indian History</a></li>
+          <li><a href="categories.html#exams">Competitive Examination Cell</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact &amp; Hours</h4>
+        <div class="footer-contact-item">
+          <span>&#128205;</span>
+          <span>Central Campus Block C, Ground to 3rd Floor, University Enclave, New Delhi - 110007</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>&#9742;</span>
+          <span>+91 (011) 2766-7000 / Ext. 204</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>&#9993;</span>
+          <span>golden.library@college-univ.edu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 The Golden Library. Developed for BTech CSE Minor Project Evaluation.</p>
+      <p>Pure HTML5 &amp; CSS3 Implementation | No JavaScript | Midnight Navy &amp; Gold Edition</p>
+    </div>
+  </footer>
+
+</body>
+</html>
