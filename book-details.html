@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clean Code by Robert C. Martin - Detailed bibliographic record, physical shelf location, copy availability, and table of contents at The Golden Library.">
+  <title>Clean Code | Book Details | The Golden Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Library Information Bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <span class="top-bar-item">
+          <strong>Library Hours:</strong> Mon - Sat: 8:00 AM - 9:00 PM | Sun: 10:00 AM - 5:00 PM
+        </span>
+        <span class="top-bar-item">
+          <strong>Helpdesk:</strong> +91 (011) 2766-7000
+        </span>
+      </div>
+      <div class="top-bar-links">
+        <a href="books.html">Catalogue</a>
+        <a href="about.html">Timings</a>
+        <a href="login.html">Student Login</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Premium Navigation Bar -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="The Golden Library Home">
+        <img src="images/library-logo.svg" alt="The Golden Library Emblem" class="brand-logo" width="280" height="60">
+      </a>
+
+      <!-- Pure CSS Mobile Toggle (Zero JavaScript) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle Navigation">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Primary Navigation Links -->
+      <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="books.html" class="nav-link">Browse Books</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="book-details.html" class="nav-link active">Book Details</a></li>
+          <li><a href="about.html" class="nav-link">About Library</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Member Login</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Join Library</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb Trail">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">&rsaquo;</span>
+          <a href="books.html">Browse Books</a>
+          <span class="breadcrumb-sep">&rsaquo;</span>
+          <a href="categories.html#programming">Programming</a>
+          <span class="breadcrumb-sep">&rsaquo;</span>
+          <span class="breadcrumb-current">Clean Code: A Handbook of Agile Software Craftsmanship</span>
+        </nav>
+
+        <!-- Main Book Detail Card -->
+        <article class="book-detail-card">
+          <div class="book-detail-grid">
+            <!-- Left Column: Visual & Location Tag -->
+            <div class="book-detail-visual">
+              <img src="images/book-clean-code.svg" alt="Clean Code Book Cover" class="book-detail-cover" width="260" height="364">
+              
+              <div class="badge badge-available mb-2">
+                <span class="badge-dot"></span> In Stock (4 Copies Available)
+              </div>
+
+              <div class="notice-box w-full">
+                <h4>Shelf Coordinates:</h4>
+                <p>Floor 2 &bull; East Wing &bull; <strong>Rack: PR-104</strong> &bull; Level 3</p>
+                <p><small>RFID Tag: RFID-849204-CCM</small></p>
+              </div>
+            </div>
+
+            <!-- Right Column: Metadata & Actions -->
+            <div class="book-detail-info">
+              <span class="section-tag">Core Academic Reference</span>
+              <h1>Clean Code: A Handbook of Agile Software Craftsmanship</h1>
+              <p class="book-detail-author">By <strong>Robert C. Martin ("Uncle Bob")</strong> &bull; Published by Prentice Hall</p>
+
+              <!-- Meta Chips -->
+              <div class="book-meta-chips">
+                <span class="book-meta-chip">&#9733; <strong>4.8</strong> / 5.0 (124 Reviews)</span>
+                <span class="book-meta-chip">&#128214; <strong>464</strong> Pages</span>
+                <span class="book-meta-chip">&#127760; English</span>
+                <span class="book-meta-chip">&#128187; Comp. Science</span>
+                <span class="book-meta-chip">&#128176; Ref Price: Rs. 749</span>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="book-actions-group mb-4">
+                <a href="login.html" class="btn btn-primary btn-lg">Borrow This Volume</a>
+                <a href="books.html" class="btn btn-secondary btn-lg">Add to Wishlist</a>
+                <a href="books.html" class="btn btn-outline btn-lg">&larr; Back to Catalogue</a>
+              </div>
+
+              <!-- Overview -->
+              <div class="book-summary">
+                <h3>Synopsis &amp; Educational Scope</h3>
+                <p>Even bad code can function. But if code is not clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code.</p>
+                <p>Noted software expert Robert C. Martin presents a revolutionary paradigm with <em>Clean Code</em>. Martin has teamed up with colleagues from Object Mentor to distill their best agile practice of cleaning code "on the fly" into a book that instills the values of software craftsmanship.</p>
+              </div>
+
+              <!-- Official Library Record Table -->
+              <h3>Official University Accession Record</h3>
+              <table class="book-spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Accession Number</th>
+                    <td>ACC-2024-ENG-0891</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ISBN-13</th>
+                    <td>978-0132350884</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Call Number</th>
+                    <td>QA76.76.D47 M37 2008</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Dewey Decimal Classification</th>
+                    <td>005.1 (Software Engineering)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Total University Copies</th>
+                    <td>6 Copies Total</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Current Stacks Availability</th>
+                    <td>4 Copies Ready for Issue</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Standard Loan Period</th>
+                    <td>14 Days (UG Scholars) / 30 Days (PG &amp; Faculty)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Reference Price</th>
+                    <td>Rs. 749 (Academic Discount Edition)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Chapter Outline -->
+              <div class="book-summary">
+                <h3>Key Table of Contents</h3>
+                <ol class="mt-2">
+                  <li><strong>Chapter 1:</strong> Clean Code &amp; The Boy Scout Rule</li>
+                  <li><strong>Chapter 2:</strong> Meaningful Names &amp; Intent-Revealing Identifiers</li>
+                  <li><strong>Chapter 3:</strong> Functions: Small, Do One Thing, and No Side Effects</li>
+                  <li><strong>Chapter 4:</strong> Comments: Good, Bad, and Redundant Explanations</li>
+                  <li><strong>Chapter 5:</strong> Formatting: Vertical &amp; Horizontal Cohesion</li>
+                  <li><strong>Chapter 6:</strong> Objects and Data Structures &amp; The Law of Demeter</li>
+                  <li><strong>Chapter 7:</strong> Error Handling: Exceptions over Return Codes</li>
+                  <li><strong>Chapter 8:</strong> Unit Tests: Three Laws of TDD &amp; F.I.R.S.T. Principles</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Related Books Section -->
+        <section aria-labelledby="related-heading">
+          <div class="section-header">
+            <span class="section-tag">Pairings</span>
+            <h2 id="related-heading" class="section-title">Related Titles Often Borrowed Together</h2>
+            <p class="section-desc">Recommended for Computer Science and Software Engineering students.</p>
+          </div>
+
+          <div class="book-grid">
+            <!-- Related 1 -->
+            <article class="book-card">
+              <div class="book-cover-wrap">
+                <span class="book-availability-tag badge badge-available">
+                  <span class="badge-dot"></span> Available
+                </span>
+                <img src="images/book-data-intensive.svg" alt="Designing Data-Intensive Applications Cover" class="book-cover-img" width="170" height="238">
+                <span class="book-shelf-tag">Rack: PR-308</span>
+              </div>
+              <div class="book-card-body">
+                <div class="book-genre-rating">
+                  <span class="badge badge-genre">Programming</span>
+                  <span class="book-rating">&#9733; 4.9 (210)</span>
+                </div>
+                <h3 class="book-card-title"><a href="book-details.html">Designing Data-Intensive Applications</a></h3>
+                <p class="book-card-author">By Martin Kleppmann</p>
+                <p class="book-card-price">Ref Price: Rs. 1,150</p>
+                <div class="book-card-meta">
+                  <a href="book-details.html" class="btn btn-outline btn-sm">Details</a>
+                  <a href="login.html" class="btn btn-primary btn-sm">Borrow</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Related 2 -->
+            <article class="book-card">
+              <div class="book-cover-wrap">
+                <span class="book-availability-tag badge badge-reserved">
+                  <span class="badge-dot"></span> Reserved
+                </span>
+                <img src="images/book-pragmatic-programmer.svg" alt="The Pragmatic Programmer Cover" class="book-cover-img" width="170" height="238">
+                <span class="book-shelf-tag">Rack: PR-112</span>
+              </div>
+              <div class="book-card-body">
+                <div class="book-genre-rating">
+                  <span class="badge badge-genre">Programming</span>
+                  <span class="book-rating">&#9733; 4.9 (165)</span>
+                </div>
+                <h3 class="book-card-title"><a href="book-details.html">The Pragmatic Programmer: 20th Anniv. Edition</a></h3>
+                <p class="book-card-author">By David Thomas &amp; Andrew Hunt</p>
+                <p class="book-card-price">Ref Price: Rs. 850</p>
+                <div class="book-card-meta">
+                  <a href="book-details.html" class="btn btn-outline btn-sm">Details</a>
+                  <a href="login.html" class="btn btn-secondary btn-sm">Waitlist</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Related 3 -->
+            <article class="book-card">
+              <div class="book-cover-wrap">
+                <span class="book-availability-tag badge badge-issued">
+                  <span class="badge-dot"></span> Issued
+                </span>
+                <img src="images/book-dsa-python.svg" alt="DSA in Python Book Cover" class="book-cover-img" width="170" height="238">
+                <span class="book-shelf-tag">Rack: CS-201</span>
+              </div>
+              <div class="book-card-body">
+                <div class="book-genre-rating">
+                  <span class="badge badge-genre">Computer Science</span>
+                  <span class="book-rating">&#9733; 4.7 (98)</span>
+                </div>
+                <h3 class="book-card-title"><a href="book-details.html">Data Structures &amp; Algorithms in Python</a></h3>
+                <p class="book-card-author">By Michael T. Goodrich</p>
+                <p class="book-card-price">Ref Price: Rs. 899</p>
+                <div class="book-card-meta">
+                  <a href="book-details.html" class="btn btn-outline btn-sm">Details</a>
+                  <a href="login.html" class="btn btn-secondary btn-sm">Waitlist</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Related 4 -->
+            <article class="book-card">
+              <div class="book-cover-wrap">
+                <span class="book-availability-tag badge badge-available">
+                  <span class="badge-dot"></span> Available
+                </span>
+                <img src="images/book-gate-cs.svg" alt="GATE CS &amp; IT Cover" class="book-cover-img" width="170" height="238">
+                <span class="book-shelf-tag">Rack: CE-205</span>
+              </div>
+              <div class="book-card-body">
+                <div class="book-genre-rating">
+                  <span class="badge badge-genre">Exam Prep</span>
+                  <span class="book-rating">&#9733; 4.8 (180)</span>
+                </div>
+                <h3 class="book-card-title"><a href="book-details.html">GATE Computer Science &amp; IT Complete Guide</a></h3>
+                <p class="book-card-author">By Faculty of GATE Experts</p>
+                <p class="book-card-price">Ref Price: Rs. 980</p>
+                <div class="book-card-meta">
+                  <a href="book-details.html" class="btn btn-outline btn-sm">Details</a>
+                  <a href="login.html" class="btn btn-primary btn-sm">Borrow</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>THE GOLDEN <span>LIBRARY</span></h3>
+        <p>A premier university resource centre fostering intellectual curiosity and academic excellence since 1984. Equipped with cutting-edge digital archives and serene study halls.</p>
+        <span class="footer-badge">BTech CSE Minor Project</span>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Portal</a></li>
+          <li><a href="books.html">Book Catalogue</a></li>
+          <li><a href="categories.html">Academic Pillars</a></li>
+          <li><a href="about.html">Library Mission</a></li>
+          <li><a href="contact.html">Helpdesk &amp; Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Disciplines</h4>
+        <ul class="footer-links">
+          <li><a href="categories.html#programming">Programming &amp; IT</a></li>
+          <li><a href="categories.html#science">Natural &amp; Applied Science</a></li>
+          <li><a href="categories.html#literature">Literature &amp; Classics</a></li>
+          <li><a href="categories.html#history">World &amp; Indian History</a></li>
+          <li><a href="categories.html#exams">Competitive Examination Cell</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact &amp; Hours</h4>
+        <div class="footer-contact-item">
+          <span>&#128205;</span>
+          <span>Central Campus Block C, Ground to 3rd Floor, University Enclave, New Delhi - 110007</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>&#9742;</span>
+          <span>+91 (011) 2766-7000 / Ext. 204</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>&#9993;</span>
+          <span>golden.library@college-univ.edu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 The Golden Library. Developed for BTech CSE Minor Project Evaluation.</p>
+      <p>Pure HTML5 &amp; CSS3 Implementation | No JavaScript | Midnight Navy &amp; Gold Edition</p>
+    </div>
+  </footer>
+
+</body>
+</html>
