@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="libGrad_librarian-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#libGrad_librarian-2)"/>
+  <circle cx="100" cy="80" r="38" fill="#f8fafc"/>
+  <path d="M45 175 C45 130 70 120 100 120 C130 120 155 130 155 175 Z" fill="#f8fafc"/>
+  <!-- Glasses / Tie icon -->
+  <circle cx="90" cy="78" r="10" fill="none" stroke="#065f46" stroke-width="2"/>
+  <circle cx="110" cy="78" r="10" fill="none" stroke="#065f46" stroke-width="2"/>
+  <line x1="100" y1="78" x2="100" y2="78" stroke="#065f46" stroke-width="2"/>
+  <polygon points="100,122 105,142 100,158 95,142" fill="#065f46"/>
+</svg>

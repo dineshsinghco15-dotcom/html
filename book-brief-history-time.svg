@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+  <defs>
+    <linearGradient id="midnightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1624" />
+      <stop offset="60%" stop-color="#192538" />
+      <stop offset="100%" stop-color="#101828" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9E782F" />
+      <stop offset="50%" stop-color="#D6B36A" />
+      <stop offset="100%" stop-color="#F3E5AB" />
+    </linearGradient>
+    <linearGradient id="spineShade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cover Base -->
+  <rect x="0" y="0" width="300" height="420" rx="8" fill="url(#midnightBg)" />
+
+  <!-- Gold Embossed Outer & Inner Border -->
+  <rect x="14" y="14" width="272" height="392" rx="5" fill="none" stroke="url(#goldAccent)" stroke-width="1.8" />
+  <rect x="18" y="18" width="264" height="384" rx="3" fill="none" stroke="#D6B36A" stroke-opacity="0.3" stroke-width="1" />
+
+  <!-- Category Badge Pill -->
+  <rect x="85" y="28" width="130" height="22" rx="11" fill="#101828" stroke="#D6B36A" stroke-width="1.2" />
+  <text x="150" y="43" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#D6B36A" text-anchor="middle" letter-spacing="1.5">SCIENCE</text>
+
+  <!-- Title Lines -->
+  <text x="150" y="68" font-family="Georgia, serif" font-size="17" font-weight="800" fill="#F8F5EE" text-anchor="middle" letter-spacing="1">A BRIEF HISTORY</text>
+<text x="150" y="88" font-family="Georgia, serif" font-size="13" font-weight="600" fill="#F8F5EE" text-anchor="middle" letter-spacing="1">OF TIME</text>
+<text x="150" y="108" font-family="Georgia, serif" font-size="11" font-weight="600" fill="#D6B36A" text-anchor="middle" letter-spacing="1">From Big Bang to Black Holes</text>
+
+
+  <!-- Gold Ornamental Divider -->
+  <line x1="60" y1="138" x2="240" y2="138" stroke="url(#goldAccent)" stroke-width="1.5" />
+  <polygon points="150,135 153,138 150,141 147,138" fill="#D6B36A" />
+
+  <!-- Central Symbol -->
+  <g transform="translate(0, 6)">
+    <ellipse cx="150" cy="210" rx="50" ry="18" fill="none" stroke="#D6B36A" stroke-width="3.5" transform="rotate(30 150 210)"/><ellipse cx="150" cy="210" rx="50" ry="18" fill="none" stroke="#D6B36A" stroke-width="3.5" transform="rotate(-30 150 210)"/><circle cx="150" cy="210" r="11" fill="#D6B36A"/>
+  </g>
+
+  <!-- Lower Divider -->
+  <line x1="60" y1="280" x2="240" y2="280" stroke="url(#goldAccent)" stroke-width="1" />
+
+  <!-- Author Name -->
+  <text x="150" y="304" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#D6B36A" text-anchor="middle" letter-spacing="1.5">AUTHOR</text>
+  <text x="150" y="326" font-family="'Georgia', serif" font-size="14" font-weight="700" fill="#F8F5EE" text-anchor="middle">Stephen Hawking</text>
+
+  <!-- Gold Library Seal -->
+  <rect x="40" y="358" width="220" height="34" rx="5" fill="#101828" stroke="#D6B36A" stroke-width="1" />
+  <circle cx="62" cy="375" r="9" fill="#D6B36A" />
+  <text x="62" y="379" font-family="Arial" font-size="10" font-weight="bold" fill="#101828" text-anchor="middle">★</text>
+  <text x="80" y="372" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="700" fill="#F8F5EE" letter-spacing="0.5">THE GOLDEN LIBRARY</text>
+  <text x="80" y="384" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="500" fill="#AEB8C7">SHELF: SC-102 • Rs. 499</text>
+
+  <!-- 3D Book Spine Effect -->
+  <rect x="0" y="0" width="22" height="420" rx="8" fill="url(#spineShade)" />
+  <line x1="22" y1="0" x2="22" y2="420" stroke="#D6B36A" stroke-opacity="0.25" stroke-width="1" />
+</svg>
